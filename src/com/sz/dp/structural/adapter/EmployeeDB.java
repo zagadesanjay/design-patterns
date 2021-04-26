@@ -35,7 +35,10 @@ public class EmployeeDB implements Employee {
 		return email;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return this.getId() + " " + this.getFirstName();
+	}
 
 
 }
