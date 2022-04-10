@@ -4,6 +4,15 @@ import java.io.Serializable;
 
 public class DbSingleton implements Serializable{
 
+	
+	// Why volatile ?
+	// because instance = new DbSingleton() this call is not atomic 
+	//instance variable may be assigned to some empty object and which will get returned from first if only
+	
+	//operations
+	//Construct Empty instance
+	//assign to variable 
+	//call constructor 
 	private static volatile DbSingleton instance = null;
 
 	private DbSingleton() {
